@@ -81,7 +81,7 @@ class Reinforce:
             total_reward = sum(rewards)
             episode_rewards.append(total_reward)
             if (i+1) % 10 == 0:
-                print(f"Episode {i+1}, Avg Reward (last 10): {np.mean(episode_rewards[-10:]):.2f}")
+                print(f"Episode {i+1}, Avg Reward of last 10 episodes: {np.mean(episode_rewards[-10:]):.2f}")
 
         # Plot results
         plt.plot(episode_rewards)
