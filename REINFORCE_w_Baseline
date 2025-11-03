@@ -99,8 +99,6 @@ class Reinforce:
             returns = self.calculate_G(rewards)
             # convert this into tensor format
             returns = torch.tensor(returns, dtype = torch.float32)
-            # normalizing for further stability
-            # returns = (returns - returns.mean()) / (returns.std() + 1e-8)
             values = self.baseline(states.detach())
             advantages = returns - values
             loss = 0
